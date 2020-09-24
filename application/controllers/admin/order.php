@@ -12,11 +12,16 @@ class Order extends CI_Controller{
 	}
 
 	function index(){
-		$kode=$this->session->userdata('idadmin');
+		$kode=$this->session->userdata('idadmin'); 
 		$x['user']=$this->m_pengguna->get_pengguna_login($kode);
 		$x['data']=$this->m_order->get_all_order();
 		$x['stts']=$this->m_status->get_all_status();
-		$this->load->view('admin/v_order',$x);
+		if($this->session->userdata('akses')=="1")
+		{
+			$this->load->view('admin/v_order',$x);
+		} else {
+			$this->load->view('admin/v_order2',$x);
+		}
 	}
 	
 	function update_order(){

@@ -8,11 +8,13 @@ class Menu extends CI_Controller{
         $this->load->library('upload');
         $this->load->helper('text');
 	}
-
+ 
 
 	function index(){
 		$x['judul']="HOT PROMO";
 		$x['get_all_menu']=$this->m_menu->get_all_menu();
+		$x['get_all_menu_by_stand']=$this->m_menu->get_all_menu_by_stand();
+		$x['get_all_stand']=$this->m_menu->get_all_stand();
 		$x['makanan']=$this->m_menu->makanan();
 		$x['minuman']=$this->m_menu->minuman();
 		$x['snack']=$this->m_menu->snack();

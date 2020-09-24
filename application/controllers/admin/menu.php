@@ -17,7 +17,13 @@ class Menu extends CI_Controller{
 		$kode=$this->session->userdata('idadmin');
 		$x['user']=$this->m_pengguna->get_pengguna_login($kode);
 		$x['kat']=$this->m_kategori->get_all_kategori();
-		$x['data']=$this->m_menu->get_all_menu();
+		if($this->session->userdata('akses')=="1")
+		{
+			$x['data']=$this->m_menu->get_all_menu(); 
+		} else {
+			$standid = $this->m_pengguna->get_stand_id($this->session->userdata('idadmin'));
+			$x['data']=$this->m_menu->get_menu_stand($standid->stand_id); 
+		}
 		$this->load->view('admin/v_menu',$x);
 	}
 

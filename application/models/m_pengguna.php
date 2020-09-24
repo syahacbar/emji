@@ -54,5 +54,9 @@ class M_pengguna extends CI_Model{
 		return $hsl;
 	}
 
+	function get_stand_id($id){
+		$hsl=$this->db->query("SELECT * FROM tbl_stand where stand_pengguna_id='$id'");
+		return $hsl->row();
+	}
 
 }

@@ -77,7 +77,7 @@
 							<tbody>
 							<?php 
 								$no=0;
-								foreach ($data->result_array() as $a) {
+								foreach ($data->result_array() as $a) { 
 									$no++;
 									$id=$a['menu_id'];
 									$nama=$a['menu_nama'];	

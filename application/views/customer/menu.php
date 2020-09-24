@@ -33,14 +33,13 @@
 					<div class="tab-content" id="v-pills-tabContent">
 						<div class="tab-pane fade show active" id="v-pills-all" role="tabpanel" aria-labelledby="v-pills-all-tab">
 							<div class="row">
-							<?php foreach ($get_all_menu->result_array() as $a) { ?>
+							<?php foreach ($get_all_menu_by_stand->result_array() as $a) { ?>
 								<div class="col-lg-4 col-md-6 special-grid drinks">
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<?php echo word_limiter($a['menu_deskripsi'],7);?>.
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<h4><?php echo $a['menu_nama']."<br>".$a['stand_nama'];?></h4>
+											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
 										</div>										
 									</div>
 								</div>

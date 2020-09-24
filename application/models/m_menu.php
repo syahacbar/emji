@@ -5,6 +5,11 @@ class M_menu extends CI_Model{
 		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,LEFT(menu_harga_lama,2) AS harga_lama,LEFT(menu_harga_baru,2) AS harga_baru,menu_harga_lama,menu_harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar, menu_status FROM tbl_menu");
 		return $hsl;	
 	}
+ 
+	function get_all_menu_by_stand(){
+		$hsl=$this->db->query("SELECT tm.menu_id,tm.menu_nama,tm.menu_deskripsi,LEFT(tm.menu_harga_lama,2) AS harga_lama,LEFT(tm.menu_harga_baru,2) AS harga_baru,tm.menu_harga_lama,tm.menu_harga_baru,tm.menu_likes,tm.menu_kategori_id,tm.menu_kategori_nama,tm.menu_gambar, tm.menu_status, ts.stand_nama FROM tbl_menu tm, tbl_stand ts WHERE tm.menu_stand_id=ts.stand_id");
+		return $hsl;	
+	}
 
 	function get_all_stand(){
 		$hsl=$this->db->query("SELECT * FROM tbl_stand");
@@ -77,7 +82,7 @@ class M_menu extends CI_Model{
 	}
 
 	function get_menu_stand($stand_id){
-		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,LEFT(menu_harga_lama,2) AS harga_lama,LEFT(menu_harga_baru,2) AS harga_baru,menu_harga_lama,menu_harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar FROM tbl_menu WHERE menu_stand_id='$stand_id' ORDER BY menu_id DESC");
+		$hsl=$this->db->query("SELECT menu_id,menu_nama,menu_deskripsi,LEFT(menu_harga_lama,2) AS harga_lama,LEFT(menu_harga_baru,2) AS harga_baru,menu_harga_lama,menu_harga_baru,menu_likes,menu_kategori_id,menu_kategori_nama,menu_gambar,menu_status FROM tbl_menu WHERE menu_stand_id='$stand_id' ORDER BY menu_id DESC");
 		return $hsl;
 	}
 

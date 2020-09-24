@@ -58,6 +58,7 @@
 							</a>
 						</li>
 
+						<?php if($this->session->userdata('akses')=="1") { ?>
 						<li>
 							<a href="<?php echo base_url().'admin/gallery'?>" <?php echo $this->uri->segment(2)=='gallery' ? 'class="active"' : '';?>>
 								<div class="gui-icon"><i class="fa fa-image"></i></div>
@@ -76,6 +77,8 @@
 								<li><a href="<?php echo base_url().'admin/status'?>" ><span class="title">Status Order</span></a></li>
 							</ul><!--end /submenu -->
 						</li><!--end /menu-li -->
+						
+						<?php } ?>	
 						<!-- END EMAIL -->
 
 
@@ -84,7 +87,7 @@
 
 					<div class="menubar-foot-panel">
 						<small class="no-linebreak hidden-folded">
-							<span class="opacity-75">&copy; <?php echo '2017';?></span> <strong>Mfikri.com</strong>
+							<span class="opacity-75">&copy; <?php echo '2020';?></span> <strong>Anggi NS</strong>
 						</small>
 					</div>
 				</div><!--end .menubar-scroll-panel-->
