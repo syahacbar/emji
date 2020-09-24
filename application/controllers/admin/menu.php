@@ -31,7 +31,7 @@ class Menu extends CI_Controller{
 				$nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
 	            $config['upload_path'] = './assets/gambar/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['max_size'] = '1024'; //maksimum besar file 2M
+	            $config['max_size'] = '10000'; //maksimum besar file 2M
 	            $config['max_width']  = '900'; //lebar maksimum 1288 px
 	            $config['max_height']  = '800'; //tinggi maksimu 1000 px
 	            $config['file_name'] = $nmfile; //nama yang terupload nantinya
