@@ -50,7 +50,7 @@ class Menu extends CI_Controller{
                             $a=$this->m_kategori->get_kategori_by_id($kategori);
                             $q=$a->row_array();
 							$kat_nama=$q['kategori_nama'];
-							$idstand = $this->session->userdata('idadmin');
+							$idstand = $this->m_pengguna->get_stand_id($this->session->userdata('idadmin'));
 	               			$this->m_menu->simpan_menu($nama,$deskripsi,$harga,$kategori,$kat_nama,$gambar,$idstand);
 	                    	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
 	               			redirect('admin/menu');
