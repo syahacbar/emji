@@ -16,8 +16,8 @@ class M_menu extends CI_Model{
 		return $hsl;	
 	}
 
-	function simpan_menu($nama,$deskripsi,$harga,$kategori,$kat_nama,$gambar){
-		$hsl=$this->db->query("INSERT INTO tbl_menu (menu_nama,menu_deskripsi,menu_harga_baru,menu_kategori_id,menu_kategori_nama,menu_gambar) VALUES ('$nama','$deskripsi','$harga','$kategori','$kat_nama','$gambar')");
+	function simpan_menu($nama,$deskripsi,$harga,$kategori,$kat_nama,$gambar,$idstand){
+		$hsl=$this->db->query("INSERT INTO tbl_menu (menu_nama,menu_deskripsi,menu_harga_baru,menu_kategori_id,menu_kategori_nama,menu_gambar,menu_stand_id) VALUES ('$nama','$deskripsi','$harga','$kategori','$kat_nama','$gambar','$idstand')");
 		return $hsl;
 	}
 

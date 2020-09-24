@@ -35,7 +35,7 @@ class Menu extends CI_Controller{
 	            $config['max_width']  = '900'; //lebar maksimum 1288 px
 	            $config['max_height']  = '800'; //tinggi maksimu 1000 px
 	            $config['file_name'] = $nmfile; //nama yang terupload nantinya
-
+ 
 	            $this->upload->initialize($config);
 	            if(!empty($_FILES['filefoto']['name']))
 	            {
@@ -49,8 +49,9 @@ class Menu extends CI_Controller{
 	                        $kategori=str_replace("'", "", $this->input->post('kategori'));
                             $a=$this->m_kategori->get_kategori_by_id($kategori);
                             $q=$a->row_array();
-                            $kat_nama=$q['kategori_nama'];
-	               			$this->m_menu->simpan_menu($nama,$deskripsi,$harga,$kategori,$kat_nama,$gambar);
+							$kat_nama=$q['kategori_nama'];
+							$idstand = $this->session->userdata('idadmin');
+	               			$this->m_menu->simpan_menu($nama,$deskripsi,$harga,$kategori,$kat_nama,$gambar,$idstand);
 	                    	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
 	               			redirect('admin/menu');
 	                    
