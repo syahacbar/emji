@@ -53,6 +53,7 @@
 							</a>
 						</li>
 
+						<?php if($this->session->userdata('akses')=="1") { ?>
 						<li>
 							<a href="<?php echo base_url().'admin/konfirmasi'?>" <?php echo $this->uri->segment(2)=='konfirmasi' ? 'class="active"' : '';?>>
 								<div class="gui-icon"><i class="fa fa-exchange"></i></div>
@@ -60,7 +61,6 @@
 							</a>
 						</li>
 
-						<?php if($this->session->userdata('akses')=="1") { ?>
 						<li>
 							<a href="<?php echo base_url().'admin/gallery'?>" <?php echo $this->uri->segment(2)=='gallery' ? 'class="active"' : '';?>>
 								<div class="gui-icon"><i class="fa fa-image"></i></div>
