@@ -44,12 +44,12 @@ class M_order extends CI_Model{
 	}
 
 	function get_all_order(){ 
-		$hsl=$this->db->query("SELECT inv_no,DATE_FORMAT(inv_tanggal,'%d %M %Y') AS inv_tanggal,inv_plg_id,inv_plg_nama,inv_status,inv_total,inv_rek_id,inv_rek_bank FROM tbl_invoice ORDER BY DATE(inv_tanggal) DESC");
+		$hsl=$this->db->query("SELECT inv_no,DATE_FORMAT(inv_tanggal,'%d %M %Y') AS inv_tanggal,inv_plg_id,inv_plg_nama,inv_status,inv_total FROM tbl_invoice ORDER BY DATE(inv_tanggal) DESC");
 		return $hsl;
 	}
 	
 	function get_all_order_by_stand($stand_id){ 
-		$hsl=$this->db->query("SELECT inv_no,DATE_FORMAT(inv_tanggal,'%d %M %Y') AS inv_tanggal,inv_plg_id,inv_plg_nama,inv_status,inv_total,inv_rek_id,inv_rek_bank FROM tbl_invoice ORDER BY DATE(inv_tanggal) DESC");
+		$hsl=$this->db->query("SELECT inv_no,DATE_FORMAT(inv_tanggal,'%d %M %Y') AS inv_tanggal,inv_plg_id,inv_plg_nama,inv_status,inv_total FROM tbl_invoice ORDER BY DATE(inv_tanggal) DESC");
 		return $hsl;
 	}
 
