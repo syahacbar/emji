@@ -56,7 +56,7 @@
 										<div class="why-text">
 											<h4><?php echo $a['menu_nama'];?></h4>
 											<?php echo word_limiter($a['menu_deskripsi'],7);?>.
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
 										</div>										
 									</div>
 								</div>
@@ -73,7 +73,7 @@
 										<div class="why-text">
 											<h4><?php echo $a['menu_nama'];?></h4>
 											<?php echo word_limiter($a['menu_deskripsi'],7);?>.
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
 										</div>										
 									</div>
 								</div>
@@ -89,7 +89,7 @@
 										<div class="why-text">
 											<h4><?php echo $a['menu_nama'];?></h4>
 											<?php echo word_limiter($a['menu_deskripsi'],7);?>.
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
 										</div>										
 									</div>
 								</div>
@@ -105,7 +105,7 @@
 										<div class="why-text">
 											<h4><?php echo $a['menu_nama'];?></h4>
 											<?php echo word_limiter($a['menu_deskripsi'],7);?>.
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
 										</div>										
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 										<div class="why-text">
 											<h4><?php echo $a['menu_nama'];?></h4>
 											<?php echo word_limiter($a['menu_deskripsi'],7);?>.
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/detail_menu/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
 										</div>										
 									</div>
 								</div>
