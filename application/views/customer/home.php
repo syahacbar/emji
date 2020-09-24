@@ -24,7 +24,7 @@
 					<div class="row">
 						<div class="col-md-12" style="text-align:center !important">
 							<h1 class="m-b-20">Welcome To <strong>EmJi Food Market</strong></h1>
-							<p class="m-b-40">Silahkan Scan QR-Code Yang Ada Dimeja Untuk Memulai Pemesanan Menu</p>
+							<p class="m-b-40"><?php echo $welcome; ?></p>
 						</div>
 					</div>
 				</div>
@@ -35,7 +35,7 @@
 					<div class="row">
 						<div class="col-md-12" style="text-align:center !important">
 							<h1 class="m-b-20">Welcome To <strong>EmJi Food Market</strong></h1>
-							<p class="m-b-40">Silahkan Scan QR-Code Yang Ada Dimeja Untuk Memulai Pemesanan Menu</p>
+							<p class="m-b-40"><?php echo $welcome; ?></p>
 						</div>
 					</div>
 				</div>
