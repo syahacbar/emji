@@ -32,8 +32,8 @@ class Menu extends CI_Controller{
 	            $config['upload_path'] = './assets/gambar/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 	            $config['max_size'] = '10000'; //maksimum besar file 2M
-	            $config['max_width']  = '900'; //lebar maksimum 1288 px
-	            $config['max_height']  = '800'; //tinggi maksimu 1000 px
+	            //$config['max_width']  = '900'; //lebar maksimum 1288 px
+	            //$config['max_height']  = '800'; //tinggi maksimu 1000 px
 	            $config['file_name'] = $nmfile; //nama yang terupload nantinya
  
 	            $this->upload->initialize($config);
