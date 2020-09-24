@@ -7,7 +7,13 @@
 					<div class="row">
 						<div class="col-md-12" style="text-align:center !important">
 							<h1 class="m-b-20">Welcome To <strong>EmJi Food Market</strong></h1>
-							<p class="m-b-40">Silahkan Scan QR-Code Yang Ada Dimeja Untuk Memulai Pemesanan Menu</p>
+							<?php if($this->session->userdata('nomor_meja')) { 
+								$welcome = "Customer Meja No-".$this->session->userdata('nomor_meja');
+							} else {
+								$welcome = "Silahkan Scan QR-Code Yang Ada Dimeja Untuk Memulai Pemesanan Menu";
+							}
+							?>
+							<p class="m-b-40"><?php echo $welcome; ?></p>
 						</div>
 					</div>
 				</div>
