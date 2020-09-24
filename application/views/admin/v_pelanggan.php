@@ -122,17 +122,6 @@
 				foreach ($data->result_array() as $a) {
 					$id=$a['plg_id'];
 					$nama=$a['plg_nama'];	
-					$alamat=$a['plg_alamat'];
-					$jenkel=$a['plg_jenkel'];
-					$notelp=$a['plg_notelp'];
-					$email=$a['plg_email'];
-					$facebook=$a['plg_facebook'];
-					$instagram=$a['plg_instagram'];
-					$line=$a['plg_line'];
-					$whatapp=$a['plg_whatapp'];
-					$path=$a['plg_path'];
-					$photo=$a['plg_photo'];
-					$register=$a['plg_register'];
 								
 			?>
 			<div class="modal fade" id="modal_edit_pengguna<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
@@ -206,17 +195,6 @@
 				foreach ($data->result_array() as $a) {
 					$id=$a['plg_id'];
 					$nama=$a['plg_nama'];	
-					$alamat=$a['plg_alamat'];
-					$jenkel=$a['plg_jenkel'];
-					$notelp=$a['plg_notelp'];
-					$email=$a['plg_email'];
-					$facebook=$a['plg_facebook'];
-					$instagram=$a['plg_instagram'];
-					$line=$a['plg_line'];
-					$whatapp=$a['plg_whatapp'];
-					$path=$a['plg_path'];
-					$photo=$a['plg_photo'];
-					$register=$a['plg_register'];
 								
 			?>
 			<div class="modal fade" id="modal_hapus_pengguna<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
