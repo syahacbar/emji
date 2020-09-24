@@ -30,12 +30,14 @@
 							</a>
 						</li>
 						<?php } ?>	
+						<?php if($this->session->userdata('akses')=="2") { ?>
 						<li>
 							<a href="<?php echo base_url().'admin/menu'?>" <?php echo $this->uri->segment(2)=='menu' ? 'class="active"' : '';?>>
 								<div class="gui-icon"><i class="fa fa-cutlery"></i></div>
 								<span class="title">Menu</span>
 							</a>
 						</li>
+						<?php } ?>	
 
 						<li>
 							<a href="<?php echo base_url().'admin/pelanggan'?>" <?php echo $this->uri->segment(2)=='pelanggan' ? 'class="active"' : '';?>>
