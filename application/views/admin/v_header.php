@@ -90,7 +90,7 @@
 								<img src="<?php echo base_url().'assets/images/'.$b['pengguna_photo'];?>" alt="" />
 								<span class="profile-info">
 									<?php echo $b['pengguna_nama'];?>
-									<small><?php if($b['pengguna_level']=="1"){echo "Adminstrator";}elseif($b['pengguna_level']=="2"){echo "Kasir";}elseif($b['pengguna_level']=="3"){echo "User Stand";}?></small>
+									<small><?php if($b['pengguna_level']=="1"){echo "Adminstrator";}elseif($b['pengguna_level']=="2"){echo "Stand";}?></small>
 								</span>
 							</a>
 							<ul class="dropdown-menu animation-dock">
