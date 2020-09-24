@@ -77,8 +77,6 @@
 									$plg_id=$a['inv_plg_id'];
 									$plg_nama=$a['inv_plg_nama'];
 									$status=$a['inv_status'];
-									$rek_id=$a['inv_rek_id'];
-									$rek_bank=$a['inv_rek_bank'];
                                     $total=$a['inv_total'];	
                                     $idpengguna = $this->session->userdata('idadmin');
 								
@@ -139,9 +137,7 @@
 					$plg_id=$a['inv_plg_id'];
 					$plg_nama=$a['inv_plg_nama'];
 					$status=$a['inv_status'];
-					$rek_id=$a['inv_rek_id'];
 					$total=$a['inv_total'];
-					$rek_bank=$a['inv_rek_bank'];
 								
 			?>
 			<div class="modal fade" id="modal_detail<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="largeModal" aria-hidden="true">
@@ -231,7 +227,6 @@
 					$plg_id=$a['inv_plg_id'];
 					$plg_nama=$a['inv_plg_nama'];
 					$status=$a['inv_status'];
-					$rek_id=$a['inv_rek_id'];
 					$total=$a['inv_total'];
 
 								
@@ -280,7 +275,6 @@
 					$plg_id=$a['inv_plg_id'];
 					$plg_nama=$a['inv_plg_nama'];
 					$status=$a['inv_status'];
-					$rek_id=$a['inv_rek_id'];
 					$total=$a['inv_total'];
 								
 			?>
