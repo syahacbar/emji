@@ -6,9 +6,9 @@
 		<!-- BEGIN META -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keywords" content="M-Food by Mfikri.com">
-		<meta name="author" content="M Fikri Setiadi">
-		<meta name="description" content="M-Food by Mfikri.com">
+		<meta name="keywords" content="Emji Food Market Manokwari">
+		<meta name="author" content="Emji Food Market Manokwari">
+		<meta name="description" content="Emji Food Market Manokwari">
 		<link rel="shorcut icon" href="<?php echo base_url().'assets/img/logo.png'?>">
 		<!-- END META -->
 
@@ -67,10 +67,6 @@
 								<tr>
 									<th>Photo</th>
 									<th>Nama</th>
-									<th>Jenis Kelamin</th>
-									<th>Alamat</th>
-									<th>Kontak</th>
-									<th>Email</th>
 									<th class="text-right">Actions</th>
 								</tr>
 							</thead>
@@ -81,16 +77,6 @@
 									$no++;
 									$id=$a['plg_id'];
 									$nama=$a['plg_nama'];	
-									$alamat=$a['plg_alamat'];
-									$jenkel=$a['plg_jenkel'];
-									$notelp=$a['plg_notelp'];
-									$email=$a['plg_email'];
-									$facebook=$a['plg_facebook'];
-									$instagram=$a['plg_instagram'];
-									$line=$a['plg_line'];
-									$whatapp=$a['plg_whatapp'];
-									$path=$a['plg_path'];
-									$photo=$a['plg_photo'];
 									$register=$a['plg_register'];
 								
 							?>
@@ -101,14 +87,6 @@
 										<td><img style="width:40px;height:40px;" class="img-circle width-1" src="<?php echo base_url().'assets/images/'.$photo;?>" alt="" /></td>
 									<?php endif;?>
 									<td><?php echo $nama;?></td>
-									<?php if($jenkel=='L'):?>
-										<td>Laki-Laki</td>
-									<?php else:?>
-										<td>Perempuan</td>
-									<?php endif;?>
-									<td><?php echo $alamat;?></td>
-									<td><?php echo $notelp;?></td>
-									<td><?php echo $email;?></td>
 									<td class="text-right">
 										<a href="#" class="btn btn-icon-toggle" title="Lihat Detail" data-toggle="modal" data-target="#modal_edit_pengguna<?php echo $id;?>"><i class="fa fa-eye"></i></a>
 										

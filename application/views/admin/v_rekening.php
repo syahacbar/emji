@@ -6,9 +6,9 @@
 		<!-- BEGIN META -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keywords" content="M-Food by Mfikri.com">
-		<meta name="author" content="M Fikri Setiadi">
-		<meta name="description" content="M-Food by Mfikri.com">
+		<meta name="keywords" content="Emji Food Market Manokwari">
+		<meta name="author" content="Emji Food Market Manokwari">
+		<meta name="description" content="Emji Food Market Manokwari">
 		<link rel="shorcut icon" href="<?php echo base_url().'assets/img/logo.png'?>">
 		<!-- END META -->
 
