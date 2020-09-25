@@ -1,4 +1,8 @@
-	<!-- Start All Pages -->
+<style>
+.menu {color:white; font-weight:bold; text-align:center}
+
+</style>	
+<!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">
 		<div class="container text-center">
 			<div class="row">
@@ -37,8 +41,8 @@
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+											<h2 class="menu"><?php echo $a['menu_nama'];?></h2>
+											<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
 										</div>										
 									</div>
 								</div>
@@ -53,8 +57,8 @@
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+										<h2 class="menu"><?php echo $a['menu_nama'];?></h4>
+										<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
 										</div>										
 									</div>
 								</div>
@@ -69,8 +73,8 @@
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+										<h2 class="menu"><?php echo $a['menu_nama'];?></h4>
+										<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
 										</div>										
 									</div>
 								</div>
@@ -84,8 +88,8 @@
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+										<h2 class="menu"><?php echo $a['menu_nama'];?></h4>
+										<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
 										</div>										
 									</div>
 								</div>
@@ -99,8 +103,8 @@
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+										<h2 class="menu"><?php echo $a['menu_nama'];?></h4>
+										<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
 										</div>										
 									</div>
 								</div>
@@ -114,8 +118,8 @@
 									<div class="gallery-single fix">
 										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
 										<div class="why-text">
-											<h4><?php echo $a['menu_nama'];?></h4>
-											<a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a>
+										<h2 class="menu"><?php echo $a['menu_nama'];?></h4>
+										<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
 										</div>										
 									</div>
 								</div>
