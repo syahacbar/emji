@@ -26,7 +26,7 @@
 						<li>
 							<a href="<?php echo base_url().'admin/pengguna'?>" <?php echo $this->uri->segment(2)=='pengguna' ? 'class="active"' : '';?>>
 								<div class="gui-icon"><i class="fa fa-user"></i></div>
-								<span class="title">Pengguna</span>
+								<span class="title">Stand</span>
 							</a>
 						</li>
 						<?php } ?>	
