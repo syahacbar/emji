@@ -4,9 +4,11 @@ class Administrator extends CI_Controller{
         parent:: __construct();
         $this->load->model('m_login');
     }
+    
     function index(){
         $this->load->view('admin/v_login');
     }
+
     function auth(){
         $username=strip_tags(str_replace("'", "", $this->input->post('username')));
         $password=strip_tags(str_replace("'", "", $this->input->post('password')));
@@ -51,7 +53,7 @@ class Administrator extends CI_Controller{
         }
         function logout(){
             $this->session->sess_destroy();
-            $url=base_url();
+            $url=base_url('administrator');
             redirect($url);
         }
 }
