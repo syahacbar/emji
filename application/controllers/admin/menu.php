@@ -44,14 +44,13 @@ class Menu extends CI_Controller{
 	                        $gbr = $this->upload->data();
 	                        $gambar=$gbr['file_name'];
 	                        $nama=str_replace("'", "", $this->input->post('nama'));
-	                        $deskripsi=str_replace("'", "", $this->input->post('deskripsi'));
 	                        $harga=str_replace("'", "", $this->input->post('harga'));
 	                        $kategori=str_replace("'", "", $this->input->post('kategori'));
                             $a=$this->m_kategori->get_kategori_by_id($kategori);
                             $q=$a->row_array();
 							$kat_nama=$q['kategori_nama'];
 							$idstand = $this->m_pengguna->get_stand_id($this->session->userdata('idadmin'));
-	               			$this->m_menu->simpan_menu($nama,$deskripsi,$harga,$kategori,$kat_nama,$gambar,$idstand->stand_id);
+	               			$this->m_menu->simpan_menu($nama,$harga,$kategori,$kat_nama,$gambar,$idstand->stand_id);
 	                    	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
 	               			redirect('admin/menu');
 	                    
@@ -84,7 +83,6 @@ class Menu extends CI_Controller{
 	                        $gambar=$gbr['file_name'];
 	                        $kode=str_replace("'", "", $this->input->post('kode'));
 	                        $nama=str_replace("'", "", $this->input->post('nama'));
-	                        $deskripsi=str_replace("'", "", $this->input->post('deskripsi'));
 	                        $harga_lama=str_replace("'", "", $this->input->post('harga_lama'));
 	                        $harga_baru=str_replace("'", "", $this->input->post('harga_baru'));
 	                        $kategori=str_replace("'", "", $this->input->post('kategori'));
@@ -94,11 +92,11 @@ class Menu extends CI_Controller{
 
                             
      						if (empty($harga_baru)) {
-     							$this->m_menu->update_menu_tanpa_harga_baru($kode,$nama,$deskripsi,$harga_lama,$kategori,$kat_nama,$gambar);
+     							$this->m_menu->update_menu_tanpa_harga_baru($kode,$nama,$harga_lama,$kategori,$kat_nama,$gambar);
 	                    		echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               				redirect('admin/menu');
      						}else{
-	               				$this->m_menu->update_menu_dengan_harga_baru($kode,$nama,$deskripsi,$harga_lama,$harga_baru,$kategori,$kat_nama,$gambar);
+	               				$this->m_menu->update_menu_dengan_harga_baru($kode,$nama,$harga_lama,$harga_baru,$kategori,$kat_nama,$gambar);
 	                    		echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               				redirect('admin/menu');
 	               			}
@@ -111,7 +109,6 @@ class Menu extends CI_Controller{
 	            }else{
 	            	$kode=str_replace("'", "", $this->input->post('kode'));
 	                $nama=str_replace("'", "", $this->input->post('nama'));
-	                $deskripsi=str_replace("'", "", $this->input->post('deskripsi'));
 	                $harga_lama=str_replace("'", "", $this->input->post('harga_lama'));
 	                $harga_baru=str_replace("'", "", $this->input->post('harga_baru'));
 	                $kategori=str_replace("'", "", $this->input->post('kategori'));
@@ -120,11 +117,11 @@ class Menu extends CI_Controller{
                     $kat_nama=$q['kategori_nama'];
 
 	            	if (empty($harga_baru)) {
-     					$this->m_menu->update_menu_tanpa_harga_baru_tanpa_gambar($kode,$nama,$deskripsi,$harga_lama,$kategori,$kat_nama);
+     					$this->m_menu->update_menu_tanpa_harga_baru_tanpa_gambar($kode,$nama,$harga_lama,$kategori,$kat_nama);
 	                	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               		redirect('admin/menu');
      				}else{
-	               		$this->m_menu->update_menu_dengan_harga_baru_tanpa_gambar($kode,$nama,$deskripsi,$harga_lama,$harga_baru,$kategori,$kat_nama);
+	               		$this->m_menu->update_menu_dengan_harga_baru_tanpa_gambar($kode,$nama,$harga_lama,$harga_baru,$kategori,$kat_nama);
 	                	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Menu <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               		redirect('admin/menu');
 	               	}

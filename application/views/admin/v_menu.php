@@ -67,7 +67,6 @@
 								<tr>
 									<th>Gambar</th>
 									<th>Nama Menu</th>
-									<th>Deskripsi</th>
 									<th style="text-align:center;">Harga</th>
 									<th>Suka</th>
 									<th>Kategori</th>
@@ -81,7 +80,6 @@
 									$no++;
 									$id=$a['menu_id'];
 									$nama=$a['menu_nama'];	
-									$deskripsi=$a['menu_deskripsi'];
 									$harga_lama=$a['menu_harga_lama'];
 									$harga_baru=$a['menu_harga_baru'];
 									$like=$a['menu_likes'];
@@ -94,7 +92,6 @@
 								<tr>
 									<td><img style="width:80px;height:80px;" class="img-thumbnail width-1" src="<?php echo base_url().'assets/gambar/'.$gambar;?>" alt="" /></td>
 									<td><?php echo $nama;?></td>
-									<td><?php echo limit_words($deskripsi,10).'...';?></td>
 									<?php if(empty($harga_lama)):?>
 										<td style="text-align:right;"><?php echo 'Rp '.number_format($harga_baru);?></td>
 									<?php else:?>
@@ -146,12 +143,6 @@
 										</div>
 									</div>
 
-									<div class="form-group">
-										<label for="textarea13" class="col-sm-3 control-label">Deskripsi</label>
-										<div class="col-sm-8">
-											<textarea name="deskripsi" id="textarea13" class="form-control" rows="3" placeholder="" required></textarea>
-										</div>
-									</div>
 
 									<div class="form-group">
 										<label for="regular13" class="col-sm-3 control-label">Harga</label>
@@ -197,7 +188,6 @@
 				foreach ($data->result_array() as $a) {
 					$id=$a['menu_id'];
 					$nama=$a['menu_nama'];	
-					$deskripsi=$a['menu_deskripsi'];
 					$harga_lama=$a['menu_harga_lama'];
 					$harga_baru=$a['menu_harga_baru'];
 					$like=$a['menu_likes'];
@@ -224,12 +214,6 @@
 										</div>
 									</div>
 
-									<div class="form-group">
-										<label for="textarea13" class="col-sm-3 control-label">Deskripsi</label>
-										<div class="col-sm-8">
-											<textarea name="deskripsi" id="textarea13" class="form-control" rows="3" placeholder="" required><?php echo $deskripsi;?></textarea>
-										</div>
-									</div>
 
 									<div class="form-group">
 										<label for="regular13" class="col-sm-3 control-label">Harga Lama(Rp)</label>
@@ -286,7 +270,6 @@
 				foreach ($data->result_array() as $a) {
 					$id=$a['menu_id'];
 					$nama=$a['menu_nama'];	
-					$deskripsi=$a['menu_deskripsi'];
 					$harga_lama=$a['menu_harga_lama'];
 					$harga_baru=$a['menu_harga_baru'];
 					$like=$a['menu_likes'];
