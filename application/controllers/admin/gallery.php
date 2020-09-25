@@ -38,7 +38,7 @@ class Gallery extends CI_Controller{
 	                        $judul=str_replace("'", "", $this->input->post('judul'));
 	                        $deskripsi=str_replace("'", "", $this->input->post('deskripsi'));
 	                      
-	               			$this->m_gallery->simpan_gallery($judul,$deskripsi,$gambar);
+	               			$this->m_gallery->simpan_gallery($gambar);
 	                    	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Gambar <b>'.$judul.'</b> Berhasil ditambahkan ke database.</div>');
 	               			redirect('admin/gallery');
 
@@ -57,9 +57,9 @@ class Gallery extends CI_Controller{
 				$nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
 	            $config['upload_path'] = './assets/galeries/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['max_size'] = '1024'; //maksimum besar file 2M
-	            $config['max_width']  = '900'; //lebar maksimum 1288 px
-	            $config['max_height']  = '800'; //tinggi maksimu 1000 px
+	            $config['max_size'] = '10000'; //maksimum besar file 2M
+	            //$config['max_width']  = '900'; //lebar maksimum 1288 px
+	            //$config['max_height']  = '800'; //tinggi maksimu 1000 px
 	            $config['file_name'] = $nmfile; //nama yang terupload nantinya
 
 	            $this->upload->initialize($config);
@@ -73,7 +73,7 @@ class Gallery extends CI_Controller{
 	                        $judul=str_replace("'", "", $this->input->post('judul'));
 	                        $deskripsi=str_replace("'", "", $this->input->post('deskripsi'));
 
-                            $this->m_gallery->update_gallery($kode,$judul,$deskripsi,$gambar);
+                            $this->m_gallery->update_gallery($kode,$gambar);
 	                    	echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Gambar <b>'.$judul.'</b> Berhasil di update.</div>');
 	               			redirect('admin/gallery');
 	                    
