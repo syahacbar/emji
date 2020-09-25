@@ -5,9 +5,8 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
 					<h3>Informasi Kontak</h3>
-					<p class="lead">Jl. Jend. Sudirman</p>
+					<p class="lead">Jl. Jend. Sudirman, Padarni, Manokwari Barat, Kabupaten Manokwari, Papua Barat 98312</p>
 					<p class="lead"><a href="#">+62 822-3822-1333</a></p>
-					<p><a href="#"> info@admin.com</a></p>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<h3>Jam Buka</h3>

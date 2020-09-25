@@ -49,10 +49,6 @@
 						<li class="nav-item <?php echo $this->uri->segment(1)=='home'||$this->uri->segment(1)==''?'active':'';?>"><a class="nav-link" href="<?php echo base_url();?>">Home</a></li>
 						<li class="nav-item <?php echo $this->uri->segment(1)=='menu'?'active':'';?>"><a class="nav-link" href="<?php echo base_url('menu');?>">Menu</a></li>
 						<li class="nav-item <?php echo $this->uri->segment(1)=='stand'?'active':'';?>"><a class="nav-link" href="<?php echo base_url('stand');?>">Stand</a></li>
-						<li class="nav-item <?php echo $this->uri->segment(1)=='about'?'active':'';?>"><a class="nav-link" href="<?php echo base_url('about');?>">About</a></li>
-						
-						<li class="nav-item <?php echo $this->uri->segment(1)=='gallery'?'active':'';?>"><a class="nav-link" href="<?php echo base_url('gallery');?>">Gallery</a></li>
-						<li class="nav-item <?php echo $this->uri->segment(1)=='contact'?'active':'';?>"><a class="nav-link" href="<?php echo base_url('contact');?>">Contact</a></li>
 
 						<li class="nav-item dropdown <?php echo $this->uri->segment(1)=='cart'||$this->uri->segment(1)=='customer'?'active':'';?>">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown"><i class="fa fa-user"></i> <?php echo "Meja-".$this->session->userdata('nomor_meja');?></a>
