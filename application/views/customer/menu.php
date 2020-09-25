@@ -25,7 +25,6 @@
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 						<a class="nav-link active" id="v-pills-all-tab" data-toggle="pill" href="#v-pills-all" role="tab" aria-controls="v-pills-all" aria-selected="true">All Menu</a>
 						<a class="nav-link" id="v-pills-promo-tab" data-toggle="pill" href="#v-pills-promo" role="tab" aria-controls="v-pills-promo" aria-selected="false">Hot Promo</a>
-						<a class="nav-link" id="v-pills-favorite-tab" data-toggle="pill" href="#v-pills-favorite" role="tab" aria-controls="v-pills-favorite" aria-selected="false">Favorite</</a>
 						<a class="nav-link" id="v-pills-makanan-tab" data-toggle="pill" href="#v-pills-makanan" role="tab" aria-controls="v-pills-makanan" aria-selected="false">Makanan</a>
 						<a class="nav-link" id="v-pills-minuman-tab" data-toggle="pill" href="#v-pills-minuman" role="tab" aria-controls="v-pills-minuman" aria-selected="false">Minuman</a>
 						<a class="nav-link" id="v-pills-snack-tab" data-toggle="pill" href="#v-pills-snack" role="tab" aria-controls="v-pills-snack" aria-selected="false">Snack</a>
@@ -65,21 +64,6 @@
 							<?php } ?>	
 							</div>
 							
-						</div>
-						<div class="tab-pane fade" id="v-pills-favorite" role="tabpanel" aria-labelledby="v-pills-favorite-tab">
-							<div class="row">
-							<?php foreach ($favorite->result_array() as $a) { ?>
-								<div class="col-lg-4 col-md-6 special-grid drinks">
-									<div class="gallery-single fix">
-										<img src="<?php echo base_url('assets/gambar').'/'.$a['menu_gambar'];?>" class="img-fluid" alt="Image">
-										<div class="why-text">
-										<h2 class="menu"><?php echo $a['menu_nama'];?></h4>
-										<center><a class="btn btn-xs btn-outline-new-white" href="<?php echo base_url().'menu/add_to_cart/'.$a['menu_id'];?>"> <?php echo $a['harga_baru'];?> K | <i class="fa fa-shopping-cart"></i> Order</a></center>
-										</div>										
-									</div>
-								</div>
-							<?php } ?>	
-							</div>
 						</div>
 						<div class="tab-pane fade" id="v-pills-makanan" role="tabpanel" aria-labelledby="v-pills-makanan-tab">
 							<div class="row">
