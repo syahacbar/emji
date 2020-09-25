@@ -251,7 +251,6 @@
 					$nama=$a['pengguna_nama'];
 					$username=$a['pengguna_username'];
 					$password=$a['pengguna_password'];
-					$email=$a['pengguna_email'];
 					$nohp=$a['pengguna_nohp'];
 					$status=$a['pengguna_status'];
 					$level=$a['pengguna_level'];
