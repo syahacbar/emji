@@ -66,8 +66,6 @@
 							<thead>
 								<tr>
 									<th>Gambar</th>
-									<th>Judul</th>
-									<th>Deskripsi</th>
 									<th class="text-right">Actions</th>
 								</tr>
 							</thead>
@@ -84,8 +82,7 @@
 							?>
 								<tr>
 									<td><img style="width:80px;height:80px;" class="img-thumbnail width-1" src="<?php echo base_url().'assets/galeries/'.$gambar;?>" alt="" /></td>
-									<td><?php echo $judul;?></td>
-									<td><?php echo limit_words($deskripsi,10).'...';?></td>
+									
 									<td class="text-right">
 										<a href="#" class="btn btn-icon-toggle" title="Edit row" data-toggle="modal" data-target="#modal_edit_pengguna<?php echo $id;?>"><i class="fa fa-pencil"></i></a>
 										<a href="#" class="btn btn-icon-toggle" title="Delete row" data-toggle="modal" data-target="#modal_hapus_pengguna<?php echo $id;?>"><i class="fa fa-trash-o"></i></a>
@@ -125,19 +122,6 @@
 			    </div>
 			    <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'admin/gallery/simpan_gallery'?>" enctype="multipart/form-data">
 			        <div class="modal-body">
-									<div class="form-group">
-										<label for="regular13" class="col-sm-3 control-label">Judul</label>
-										<div class="col-sm-8">
-											<input type="text" name="judul" class="form-control" id="regular13" required>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label for="textarea13" class="col-sm-3 control-label">Deskripsi</label>
-										<div class="col-sm-8">
-											<textarea name="deskripsi" id="textarea13" class="form-control" rows="3" placeholder="" required></textarea>
-										</div>
-									</div>
 									
 									<div class="form-group">
 										<label for="regular13" class="col-sm-3 control-label">Gambar</label>
@@ -174,21 +158,6 @@
 			    </div>
 			    <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'admin/gallery/update_gallery'?>" enctype="multipart/form-data">
 			        <div class="modal-body">
-									<div class="form-group">
-										<label for="regular13" class="col-sm-3 control-label">Judul</label>
-										<div class="col-sm-8">
-											<input type="hidden" name="kode" value="<?php echo $id;?>">
-											<input type="text" name="judul" value="<?php echo $judul?>" class="form-control" id="regular13" required>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<label for="textarea13" class="col-sm-3 control-label">Deskripsi</label>
-										<div class="col-sm-8">
-											<textarea name="deskripsi" id="textarea13" class="form-control" rows="3" placeholder="" required><?php echo $deskripsi;?></textarea>
-										</div>
-									</div>
-									
 									<div class="form-group">
 										<label for="regular13" class="col-sm-3 control-label">Gambar</label>
 										<div class="col-sm-8">
