@@ -3,8 +3,7 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Special Menu</h1>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					<h1>MENU</h1>
 				</div>
 			</div>
 		</div>
