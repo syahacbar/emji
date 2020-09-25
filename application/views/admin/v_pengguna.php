@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Pengguna</title>
+		<title>Stand</title>
 
 		<!-- BEGIN META -->
 		<meta charset="utf-8">
@@ -44,14 +44,14 @@
 			<div id="content">
 				<section>
 					<div class="section-header">
-							<h2><span class="fa fa-user"></span> Data Pengguna</h2>
+							<h2><span class="fa fa-user"></span> Data Stand</h2>
 					</div>
 						<?php echo $this->session->flashdata('msg');?>
 				</section>
 
 				<!-- BEGIN TABLE HOVER -->
 				<section class="style-default-bright" style="margin-top:0px;">
-					<p><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal_add_pengguna"><span class="fa fa-plus"></span> Tambah Pengguna</a></p>
+					<p><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modal_add_pengguna"><span class="fa fa-plus"></span> Tambah Stand</a></p>
 					
 					<div class="section-body">	
 						<div class="row">
@@ -60,11 +60,9 @@
 							<thead>
 								<tr>
 									<th>Photo</th>
-									<th>Nama</th>
-									<th>Jenis Kelamin</th>
+									<th>Nama Stand</th>
 									<th>Username</th>
 									<th>Password</th>
-									<th>Email</th>
 									<th>Kontak</th>
 									<th>Status</th>
 									<th class="text-right">Actions</th>
@@ -75,11 +73,8 @@
 								foreach ($data->result_array() as $a) {
 									$id=$a['pengguna_id'];
 									$nama=$a['pengguna_nama'];
-									$jenis_kelamin=$a['pengguna_jenkel'];
-									$jenkel=$a['jenkel'];
 									$username=$a['pengguna_username'];
 									$password=$a['pengguna_password'];
-									$email=$a['pengguna_email'];
 									$nohp=$a['pengguna_nohp'];
 									$status=$a['pengguna_status'];
 									$level=$a['pengguna_level'];
@@ -89,16 +84,10 @@
 								<tr>
 									<td><img style="width:40px;height:40px;" class="img-circle width-1" src="<?php echo base_url().'assets/images/'.$photo;?>" alt="" /></td>
 									<td><?php echo $nama;?></td>
-									<td><?php echo $jenkel;?></td>
 									<td><?php echo $username;?></td>
 									<td><?php echo $password;?></td>
-									<td><?php echo $email;?></td>
 									<th><?php echo $nohp?></th>
-									<?php if($status=1):?>
-										<th>Aktif</th>
-									<?php else:?>
-										<th>Non Aktif</th>
-									<?php endif;?>
+									<th><?php echo $status?></th>
 									<td class="text-right">
 										<a href="#" class="btn btn-icon-toggle" title="Edit row" data-toggle="modal" data-target="#modal_edit_pengguna<?php echo $id;?>"><i class="fa fa-pencil"></i></a>
 										<a href="<?php echo base_url().'admin/pengguna/reset_password/'.$id;?>" class="btn btn-icon-toggle" title="Reset Password"><i class="fa fa-refresh"></i></a>
@@ -133,24 +122,14 @@
 			    <div class="modal-content">
 			    <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			        <h3 class="modal-title" id="myModalLabel">Tambah Pengguna</h3>
+			        <h3 class="modal-title" id="myModalLabel">Tambah Stand</h3>
 			    </div>
 			    <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'admin/pengguna/simpan_pengguna'?>" enctype="multipart/form-data">
 			        <div class="modal-body">
 									<div class="form-group">
-										<label for="regular13" class="col-sm-3 control-label">Nama</label>
+										<label for="regular13" class="col-sm-3 control-label">Nama Stand</label>
 										<div class="col-sm-8">
 											<input type="text" name="nama" class="form-control" id="regular13" required>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="select13" class="col-sm-3 control-label">Jenis Kelamin</label>
-										<div class="col-sm-8">
-											<select id="select13" name="jenkel" class="form-control" required>
-												<option value="">&nbsp;</option>
-												<option value="L">Laki-Laki</option>
-												<option value="P">Perempuan</option>
-											</select>
 										</div>
 									</div>
 									<div class="form-group">
@@ -169,12 +148,6 @@
 										<label for="password13" class="col-sm-3 control-label">Ulangi Password</label>
 										<div class="col-sm-8">
 											<input type="password" name="password2" class="form-control" id="password13" required>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="regular13" class="col-sm-3 control-label">Email</label>
-										<div class="col-sm-8">
-											<input type="email" name="email" class="form-control" id="regular13" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -205,11 +178,8 @@
 				foreach ($data->result_array() as $a) {
 					$id=$a['pengguna_id'];
 					$nama=$a['pengguna_nama'];
-					$jenis_kelamin=$a['pengguna_jenkel'];
-					$jenkel=$a['jenkel'];
 					$username=$a['pengguna_username'];
 					$password=$a['pengguna_password'];
-					$email=$a['pengguna_email'];
 					$nohp=$a['pengguna_nohp'];
 					$status=$a['pengguna_status'];
 					$level=$a['pengguna_level'];
@@ -221,30 +191,15 @@
 			    <div class="modal-content">
 			    <div class="modal-header">
 			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			        <h3 class="modal-title" id="myModalLabel">Edit Pengguna</h3>
+			        <h3 class="modal-title" id="myModalLabel">Edit Stand</h3>
 			    </div>
 			    <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'admin/pengguna/update_pengguna'?>" enctype="multipart/form-data">
 			        <div class="modal-body">
 									<div class="form-group">
-										<label for="regular13" class="col-sm-3 control-label">Nama</label>
+										<label for="regular13" class="col-sm-3 control-label">Nama Stand</label>
 										<div class="col-sm-8">
 											<input type="hidden" name="kode" value="<?php echo $id;?>">
 											<input type="text" name="nama" value="<?php echo $nama;?>" class="form-control" id="regular13" required>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="select13" class="col-sm-3 control-label">Jenis Kelamin</label>
-										<div class="col-sm-8">
-											<select id="select13" name="jenkel" class="form-control" required>
-												<option value="">&nbsp;</option>
-												<?php if($jenis_kelamin=='L'):?>
-													<option value="L" selected>Laki-Laki</option>
-													<option value="P">Perempuan</option>
-												<?php else:?>
-													<option value="L">Laki-Laki</option>
-													<option value="P" selected>Perempuan</option>
-												<?php endif;?>
-											</select>
 										</div>
 									</div>
 									<div class="form-group">
@@ -263,12 +218,6 @@
 										<label for="password13" class="col-sm-3 control-label">Ulangi Password</label>
 										<div class="col-sm-8">
 											<input type="password" name="password2" class="form-control" id="password13">
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="regular13" class="col-sm-3 control-label">Email</label>
-										<div class="col-sm-8">
-											<input type="email" name="email" class="form-control" value="<?php echo $email;?>" id="regular13" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -300,8 +249,6 @@
 				foreach ($data->result_array() as $a) {
 					$id=$a['pengguna_id'];
 					$nama=$a['pengguna_nama'];
-					$jenis_kelamin=$a['pengguna_jenkel'];
-					$jenkel=$a['jenkel'];
 					$username=$a['pengguna_username'];
 					$password=$a['pengguna_password'];
 					$email=$a['pengguna_email'];

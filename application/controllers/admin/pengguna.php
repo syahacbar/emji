@@ -22,9 +22,9 @@ class Pengguna extends CI_Controller{
 				$nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
 	            $config['upload_path'] = './assets/images/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['max_size'] = '1024'; //maksimum besar file 1M
-	            $config['max_width']  = '900'; //lebar maksimum 1288 px
-	            $config['max_height']  = '800'; //tinggi maksimu 1000 px
+	            $config['max_size'] = '3024'; //maksimum besar file 1M
+	            //$config['max_width']  = '900'; //lebar maksimum 1288 px
+	            //$config['max_height']  = '800'; //tinggi maksimu 1000 px
 	            $config['file_name'] = $nmfile; //nama yang terupload nantinya
 
 	            $this->upload->initialize($config);
@@ -35,17 +35,17 @@ class Pengguna extends CI_Controller{
 	                        $gbr = $this->upload->data();
 	                        $gambar=$gbr['file_name'];
 	                        $nama=str_replace("'", "", $this->input->post('nama'));
-	                        $jenkel=str_replace("'", "", $this->input->post('jenkel'));
 	                        $username=str_replace("'", "", $this->input->post('username'));
 	                        $password=str_replace("'", "", $this->input->post('password'));
                             $konfirm_password=str_replace("'", "", $this->input->post('password2'));
-                            $email=str_replace("'", "", $this->input->post('email'));
                             $nohp=str_replace("'", "", $this->input->post('kontak'));
      						if ($password <> $konfirm_password) {
      							echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Password dan Ulangi Password yang Anda masukan tidak sama.</div>');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->simpan_pengguna($nama,$jenkel,$username,$password,$email,$nohp,$gambar);
+	               				$this->m_pengguna->simpan_pengguna($nama,$username,$password,$nohp,$gambar);
+								   $idpengguna = $this->db->insert_id();
+								   $this->m_pengguna->simpan_stand($nama,$idpengguna);
 	                    		echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
 	               				redirect('admin/pengguna');
 	               			}
@@ -57,17 +57,17 @@ class Pengguna extends CI_Controller{
 	                 redirect('admin/pengguna');
 	            }else{
 	            	$nama=str_replace("'", "", $this->input->post('nama'));
-	                $jenkel=str_replace("'", "", $this->input->post('jenkel'));
 	                $username=str_replace("'", "", $this->input->post('username'));
 	                $password=str_replace("'", "", $this->input->post('password'));
                     $konfirm_password=str_replace("'", "", $this->input->post('password2'));
-                    $email=str_replace("'", "", $this->input->post('email'));
                     $nohp=str_replace("'", "", $this->input->post('kontak'));
 	            	if ($password <> $konfirm_password) {
      					echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Password dan Ulangi Password yang Anda masukan tidak sama.</div>');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$jenkel,$username,$password,$email,$nohp);
+						   $this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$username,$password,$nohp);
+						   $idpengguna = $this->db->insert_id();
+						   $this->m_pengguna->simpan_stand($nama,$idpengguna);
 	                    echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
 	               		redirect('admin/pengguna');
 	               	}
@@ -79,9 +79,9 @@ class Pengguna extends CI_Controller{
 				$nmfile = "file_".time(); //nama file saya beri nama langsung dan diikuti fungsi time
 	            $config['upload_path'] = './assets/images/'; //path folder
 	            $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-	            $config['max_size'] = '1024'; //maksimum besar file 2M
-	            $config['max_width']  = '900'; //lebar maksimum 1288 px
-	            $config['max_height']  = '800'; //tinggi maksimu 1000 px
+	            $config['max_size'] = '3024'; //maksimum besar file 2M
+	            //$config['max_width']  = '900'; //lebar maksimum 1288 px
+	            //$config['max_height']  = '800'; //tinggi maksimu 1000 px
 	            $config['file_name'] = $nmfile; //nama yang terupload nantinya
 
 	            $this->upload->initialize($config);
@@ -93,22 +93,20 @@ class Pengguna extends CI_Controller{
 	                        $gambar=$gbr['file_name'];
 	                        $kode=str_replace("'", "", $this->input->post('kode'));
 	                        $nama=str_replace("'", "", $this->input->post('nama'));
-	                        $jenkel=str_replace("'", "", $this->input->post('jenkel'));
 	                        $username=str_replace("'", "", $this->input->post('username'));
 	                        $password=str_replace("'", "", $this->input->post('password'));
                             $konfirm_password=str_replace("'", "", $this->input->post('password2'));
-                            $email=str_replace("'", "", $this->input->post('email'));
                             $nohp=str_replace("'", "", $this->input->post('kontak'));
 
                             if (empty($password) && empty($konfirm_password)) {
-                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$jenkel,$username,$password,$email,$nohp,$gambar);
+                            	$this->m_pengguna->update_pengguna_tanpa_pass($kode,$nama,$username,$password,$nohp,$gambar);
 	                    		echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               				redirect('admin/pengguna');
      						}elseif ($password <> $konfirm_password) {
      							echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Password dan Ulangi Password yang Anda masukan tidak sama.</div>');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->update_pengguna($kode,$nama,$jenkel,$username,$password,$email,$nohp,$gambar);
+	               				$this->m_pengguna->update_pengguna($kode,$nama,$username,$password,$nohp,$gambar);
 	                    		echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               				redirect('admin/pengguna');
 	               			}
@@ -121,21 +119,19 @@ class Pengguna extends CI_Controller{
 	            }else{
 	            	$kode=str_replace("'", "", $this->input->post('kode'));
 	            	$nama=str_replace("'", "", $this->input->post('nama'));
-	                $jenkel=str_replace("'", "", $this->input->post('jenkel'));
 	                $username=str_replace("'", "", $this->input->post('username'));
 	                $password=str_replace("'", "", $this->input->post('password'));
                     $konfirm_password=str_replace("'", "", $this->input->post('password2'));
-                    $email=str_replace("'", "", $this->input->post('email'));
                     $nohp=str_replace("'", "", $this->input->post('kontak'));
 	            	if (empty($password) && empty($konfirm_password)) {
-                       	$this->m_pengguna->update_pengguna_tanpa_pass_dan_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp);
+                       	$this->m_pengguna->update_pengguna_tanpa_pass_dan_gambar($kode,$nama,$username,$password,$nohp);
 	                    echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               		redirect('admin/pengguna');
      				}elseif ($password <> $konfirm_password) {
      					echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Password dan Ulangi Password yang Anda masukan tidak sama.</div>');
 	               		redirect('admin/pengguna');
      				}else{
-	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$jenkel,$username,$password,$email,$nohp);
+	               		$this->m_pengguna->update_pengguna_tanpa_gambar($kode,$nama,$username,$password,$nohp);
 	                    echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil diupdate.</div>');
 	               		redirect('admin/pengguna');
 	               	}
