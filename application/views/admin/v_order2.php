@@ -62,7 +62,6 @@
 									<th>Tanggal</th>
 									<th>Pelanggan</th>
 									<th>Menu</th>
-									<th>Porsi</th>
 									<th>Status Order</th>	
 									<th class="text-right">Actions</th>
 								</tr>
@@ -98,7 +97,6 @@
                                                         } ?>
                                                         </ul>
                                     </td>
-									<td><?php echo number_format($total);?></td>
 									<td><?php echo $status;?></td>
 									<td class="text-right">
 										<a href="#" class="btn btn-icon-toggle" title="Update Status Order" data-toggle="modal" data-target="#modal_edit_pengguna<?php echo $id;?>"><i class="fa fa-pencil"></i></a>
