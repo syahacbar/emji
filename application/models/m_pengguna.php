@@ -7,12 +7,12 @@ class M_pengguna extends CI_Model{
 	}
 
 	function simpan_pengguna($nama,$username,$password,$nohp,$gambar){
-		$hsl=$this->db->query("INSERT INTO tbl_pengguna (pengguna_nama,pengguna_username,pengguna_password,,pengguna_nohp,pengguna_level,pengguna_photo) VALUES ('$nama','$username',md5('$password'),'$nohp','1','$gambar')");
+		$hsl=$this->db->query("INSERT INTO tbl_pengguna (pengguna_nama,pengguna_username,pengguna_password,,pengguna_nohp,pengguna_level,pengguna_photo) VALUES ('$nama','$username',md5('$password'),'$nohp','2','$gambar')");
 		return $hsl;
 	}
 
 	function simpan_pengguna_tanpa_gambar($nama,$username,$password,$nohp){
-		$hsl=$this->db->query("INSERT INTO tbl_pengguna (pengguna_nama,pengguna_username,pengguna_password,pengguna_nohp,pengguna_level) VALUES ('$nama','$username',md5('$password'),'$nohp','1')");
+		$hsl=$this->db->query("INSERT INTO tbl_pengguna (pengguna_nama,pengguna_username,pengguna_password,pengguna_nohp,pengguna_level) VALUES ('$nama','$username',md5('$password'),'$nohp','2')");
 		return $hsl;
 	}
 
