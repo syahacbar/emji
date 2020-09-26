@@ -51,34 +51,6 @@
 							</ul><!--end .dropdown-menu -->
 						</li><!--end .dropdown -->
 
-						<?php 
-								$qryk=$this->db->query("SELECT COUNT(konfirmasi_id) AS jum_kon FROM tbl_konfirmasi WHERE konfirmasi_status='0'");
-								$k=$qryk->row_array();
-							?>
-						<li class="dropdown hidden-xs">
-							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
-								<i class="fa fa-bell"></i><sup class="badge style-danger"><?php echo $k['jum_kon'];?></sup>
-							</a>
-							<ul class="dropdown-menu animation-expand">
-								<li class="dropdown-header">Konfirmasi Pembayaran</li>
-								<?php 
-									$qr=$this->db->query("SELECT DATE_FORMAT(konfirmasi_tanggal,'%d %M %Y') AS tgl,konfirmasi_nama,konfirmasi_nama FROM tbl_konfirmasi WHERE konfirmasi_status='0' order by date(konfirmasi_tanggal) desc");
-									foreach ($qr->result_array() as $x1) {
-										$tgl1=$x1['tgl'];
-										$plg1=$x1['konfirmasi_nama'];
-										$sts1=$x1['konfirmasi_nama'];
-									
-								?>
-								<li>
-									<a class="alert alert-callout alert-warning" href="<?php echo base_url().'admin/konfirmasi'?>">
-										<strong><?php echo $plg1.' Mengkonfirmasi Pembayaran...';?></strong><br/>
-										<small><?php echo $tgl1;?></small>
-									</a>
-								</li>
-								<?php } ?>
-								
-							</ul><!--end .dropdown-menu -->
-						</li><!--end .dropdown -->
 						
 					</ul><!--end .header-nav-options -->
 					<?php 
