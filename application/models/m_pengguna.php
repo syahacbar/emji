@@ -2,7 +2,7 @@
 class M_pengguna extends CI_Model{
 
 	function get_all_pengguna(){
-		$hsl=$this->db->query("SELECT tbl_pengguna.* FROM tbl_pengguna");
+		$hsl=$this->db->query("SELECT tbl_pengguna.* FROM tbl_pengguna WHERE pengguna_level!=1");
 		return $hsl;	
 	}
 
