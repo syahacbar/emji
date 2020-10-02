@@ -88,7 +88,6 @@
 									<?php endif;?>
 									<td><?php echo $nama;?></td>
 									<td class="text-right">
-										<a href="#" class="btn btn-icon-toggle" title="Lihat Detail" data-toggle="modal" data-target="#modal_edit_pengguna<?php echo $id;?>"><i class="fa fa-eye"></i></a>
 										
 										<a href="#" class="btn btn-icon-toggle" title="Hapus Pelanggan" data-toggle="modal" data-target="#modal_hapus_pengguna<?php echo $id;?>"><i class="fa fa-trash-o"></i></a>
 									</td>
