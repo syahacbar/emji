@@ -299,7 +299,7 @@
 		<script src="<?php echo base_url().'assets/js/source/AppVendor.js'?>"></script>
 		<script src="<?php echo base_url().'assets/js/Chart.js'?>"></script>
 		<!-- END JAVASCRIPT -->
-		<script>
+		<script> 
 
 			var lineChartData = {
 				labels : <?php echo json_encode($bulan);?>,

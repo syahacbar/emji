@@ -57,7 +57,7 @@ class Menu extends CI_Controller{
 	function add_to_cart(){
 		$kode=$this->uri->segment(3);
 		$produk=$this->m_menu->detail_menu($kode);
-		$i=$produk->row_array();
+		$i=$produk->row_array(); 
 		$data = array(
                'id'      => $i['menu_id'],
                'qty'     => 1,
@@ -116,36 +116,7 @@ class Menu extends CI_Controller{
 		$this->load->view('customer/footer');
         
 	}
-	function cod(){
-		$no_invoice=$this->session->userdata('no_invoice');
-		
-		$this->m_order->set_pembayaran_cod($no_invoice);
-		$x['data']=$this->m_order->get_checkout($no_invoice);
-		
-		$this->load->view('customer/invoice',$x);
-		
-	}
 
-	function transfer_bank(){
-		$x['data']=$this->m_order->get_all_rekening();
-		
-		$this->load->view('customer/rekening',$x);
-	}
-
-	function set_pembayaran(){
-		$no_invoice=$this->session->userdata('no_invoice');
-		
-		$pem_id=$this->uri->segment(4);
-		$d=$this->m_order->get_rekening($pem_id);
-		$q=$d->row_array();
-		$rek_id=$q['rek_id'];
-		$rek_no=$q['rek_no'];
-		$rek_bank=$q['rek_bank'];
-		$rek_nama=$q['rek_nama'];
-		$rek_cabang=$q['rek_cabang'];
-		$this->m_order->set_pembayaran_transfer($no_invoice,$rek_id,$rek_no,$rek_bank,$rek_nama,$rek_cabang);
-		redirect('menu/cetak_invoice');
-	}
 	function cetak_invoice(){
 		$no_invoice=$this->session->userdata('no_invoice');
 		$x['data']=$this->m_order->get_checkout($no_invoice);
