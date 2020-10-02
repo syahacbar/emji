@@ -127,7 +127,6 @@
 						    /* end mengambil query*/
 						     
 						?>
-
 							<!-- BEGIN SITE ACTIVITY -->
 							<div class="col-md-12">
 								<div class="card ">
