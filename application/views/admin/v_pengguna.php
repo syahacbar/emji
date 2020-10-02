@@ -62,7 +62,6 @@
 									<th>Photo</th>
 									<th>Nama Stand</th>
 									<th>Username</th>
-									<th>Password</th>
 									<th>Kontak</th>
 									<th>Status</th>
 									<th class="text-right">Actions</th>
@@ -85,7 +84,6 @@
 									<td><img style="width:40px;height:40px;" class="img-circle width-1" src="<?php echo base_url().'assets/images/'.$photo;?>" alt="" /></td>
 									<td><?php echo $nama;?></td>
 									<td><?php echo $username;?></td>
-									<td><?php echo $password;?></td>
 									<th><?php echo $nohp?></th>
 									<th><?php echo $status?></th>
 									<td class="text-right">
