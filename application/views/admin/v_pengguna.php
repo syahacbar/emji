@@ -90,7 +90,7 @@
 									<th><?php echo $status?></th>
 									<td class="text-right">
 										<a href="#" class="btn btn-icon-toggle" title="Edit row" data-toggle="modal" data-target="#modal_edit_pengguna<?php echo $id;?>"><i class="fa fa-pencil"></i></a>
-										<a href="<?php echo base_url().'admin/pengguna/reset_password/'.$id;?>" class="btn btn-icon-toggle" title="Reset Password"><i class="fa fa-refresh"></i></a>
+										<a href="<?php echo base_url().'admin/pengguna/reset_password/'.$id;?>" class="btn btn-icon-toggle" title="Reset Password"><i class="fa fa-key"></i></a>
 										<a href="#" class="btn btn-icon-toggle" title="Delete row" data-toggle="modal" data-target="#modal_hapus_pengguna<?php echo $id;?>"><i class="fa fa-trash-o"></i></a>
 									</td>
 								</tr>

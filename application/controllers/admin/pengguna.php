@@ -155,7 +155,7 @@ class Pengguna extends CI_Controller{
             $a=$get->row_array();
             $b=$a['pengguna_username'];
         }
-        $pass=rand(123456,999999);
+        $pass="123456";
         $this->m_pengguna->resetpass($id,$pass);
         echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Username : <b>'.$b.'</b> <br/> Password baru : <b>'.$pass.'</b></div>');
 	    redirect('admin/pengguna');
