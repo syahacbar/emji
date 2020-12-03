@@ -16,13 +16,28 @@ class M_order extends CI_Model{
 		return $hsl;
 	}
 
+	function get_total_porsi_terjual_bulan_ini_by_stand($stand_id){
+		$hsl=$this->db->query("SELECT SUM(td.detail_porsi) AS total_porsi FROM tbl_invoice ti JOIN tbl_detail td ON td.detail_inv_no=ti.inv_no JOIN tbl_menu tm ON tm.menu_id=td.detail_menu_id JOIN tbl_stand ts ON ts.stand_id=tm.menu_stand_id WHERE MONTH(ti.inv_tanggal)=MONTH(CURDATE()) AND ts.stand_id='$stand_id'");
+		return $hsl;
+	}
+
 	function get_total_penjualan_bulan_lalu(){
 		$hsl=$this->db->query("SELECT SUM(inv_total) AS total_penjualan FROM tbl_invoice WHERE MONTH(inv_tanggal)=MONTH(CURDATE())-1");
 		return $hsl;
 	}
 
+	function get_total_penjualan_bulan_lalu_by_stand($stand_id){
+		$hsl=$this->db->query("SELECT SUM(ti.inv_total) AS total_penjualan FROM tbl_invoice ti JOIN tbl_detail td ON td.detail_inv_no=ti.inv_no JOIN tbl_menu tm ON tm.menu_id=td.detail_menu_id JOIN tbl_stand ts ON ts.stand_id=tm.menu_stand_id WHERE MONTH(ti.inv_tanggal)=MONTH(CURDATE())-1 AND ts.stand_id='$stand_id'");
+		return $hsl;
+	}
+
 	function get_total_penjualan_sekarang(){
 		$hsl=$this->db->query("SELECT SUM(inv_total) AS total_penjualan FROM tbl_invoice WHERE MONTH(inv_tanggal)=MONTH(CURDATE())");
+		return $hsl;
+	}
+
+	function get_total_penjualan_sekarang_by_stand($stand_id){
+		$hsl=$this->db->query("SELECT SUM(ti.inv_total) AS total_penjualan FROM tbl_invoice ti JOIN tbl_detail td ON td.detail_inv_no=ti.inv_no JOIN tbl_menu tm ON tm.menu_id=td.detail_menu_id JOIN tbl_stand ts ON ts.stand_id=tm.menu_stand_id WHERE MONTH(ti.inv_tanggal)=MONTH(CURDATE()) AND ts.stand_id='$stand_id'");
 		return $hsl;
 	}
 

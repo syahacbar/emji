@@ -11,6 +11,11 @@ class M_pengguna extends CI_Model{
 		return $hsl;
 	}
 
+	function cek_nama_stand($nama){
+		$hsl=$this->db->query("SELECT * FROM tbl_stand WHERE stand_nama='$nama'");
+		return $hsl;
+	}
+
 	function simpan_pengguna_tanpa_gambar($nama,$username,$password,$nohp){
 		$hsl=$this->db->query("INSERT INTO tbl_pengguna (pengguna_nama,pengguna_username,pengguna_password,pengguna_nohp,pengguna_level) VALUES ('$nama','$username',md5('$password'),'$nohp','2')");
 		return $hsl;
@@ -40,7 +45,10 @@ class M_pengguna extends CI_Model{
 		return $hsl;
 	}
 	//END UPDATE PENGGUNA//
-
+	function hapus_stand($kode){
+		$hsl=$this->db->query("DELETE FROM tbl_stand where stand_pengguna_id='$kode'");
+		return $hsl;
+	}
 	function hapus_pengguna($kode){
 		$hsl=$this->db->query("DELETE FROM tbl_pengguna where pengguna_id='$kode'");
 		return $hsl;

@@ -126,7 +126,7 @@
 			        <div class="modal-body">
 									<div class="form-group">
 										<label for="regular13" class="col-sm-3 control-label">Nama Stand</label>
-										<div class="col-sm-8">
+					 					<div class="col-sm-8">
 											<input type="text" name="nama" class="form-control" id="regular13" required>
 										</div>
 									</div>

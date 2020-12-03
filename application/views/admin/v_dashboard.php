@@ -153,7 +153,7 @@
 						<div class="row">
 
 							<!-- BEGIN TODOS -->
-							<div class="col-md-3">
+							<div class="col-md-6">
 								<div class="card ">
 									<div class="card-head">
 										<header>Orders Terbaru</header>
@@ -198,31 +198,9 @@
 							    /* end mengambil query*/
 						     
 							?>
-							<!-- BEGIN REGISTRATION HISTORY -->
-							<div class="col-md-6">
-								<div class="card">
-									<div class="card-head">
-										<header>Statistik Pelanggan</header>
-										<div class="tools">
-											<a class="btn btn-icon-toggle btn-close"><i class="fa fa-close"></i></a>
-										</div>
-									</div><!--end .card-head -->
-									<div class="card-body no-padding height-9">
-										<div class="row">
-											
-											<canvas id="canvasplg" width="560" height="340" style="margin-left:20px;"></canvas>
-										</div><!--end .row -->
-										<div class="stick-bottom-left-right force-padding">
-											<!--<div id="flot-registrations" class="flot height-5" data-title="Registration history" data-color="#0aa89e"></div>-->
-											
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-							</div><!--end .col -->
-							<!-- END REGISTRATION HISTORY -->
-
+							
 							<!-- BEGIN NEW REGISTRATIONS -->
-							<div class="col-md-3">
+							<div class="col-md-6">
 								<div class="card">
 									<div class="card-head">
 										<header>Pelanggan Terbaru</header>

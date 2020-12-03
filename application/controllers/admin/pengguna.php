@@ -43,13 +43,18 @@ class Pengguna extends CI_Controller{
      							echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Password dan Ulangi Password yang Anda masukan tidak sama.</div>');
 	               				redirect('admin/pengguna');
      						}else{
-	               				$this->m_pengguna->simpan_pengguna($nama,$username,$password,$nohp,$gambar);
+								$cekstand = $this->m_pengguna->cek_nama_stand($nama);
+								if($cekstand->num_rows()>0){
+								 echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Nama Stand <b>'.$nama.'</b> Sudah Ada, Silahkan Pakai Nama Lain.</div>');
+								} else {
+	               				   $this->m_pengguna->simpan_pengguna($nama,$username,$password,$nohp,$gambar);
 								   $idpengguna = $this->db->insert_id();
 								   $this->m_pengguna->simpan_stand($nama,$idpengguna);
 	                    		echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
-	               				redirect('admin/pengguna');
+								}
+								redirect('admin/pengguna');
 	               			}
-	                    
+	                     
 	                }else{
 	                    echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna tidak dapat ditambahkan, file gambar yang Anda masukkan terlalu besar.</div>');
 	                    redirect('admin/pengguna');
@@ -65,11 +70,17 @@ class Pengguna extends CI_Controller{
      					echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Password dan Ulangi Password yang Anda masukan tidak sama.</div>');
 	               		redirect('admin/pengguna');
      				}else{
+						   $cekstand = $this->m_pengguna->cek_nama_stand($nama);
+						   if($cekstand->num_rows()>0){
+							echo $this->session->set_flashdata('msg','<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times;</button>Nama Stand <b>'.$nama.'</b> Sudah Ada, Silahkan Pakai Nama Lain.</div>');
+						   } else {
 						   $this->m_pengguna->simpan_pengguna_tanpa_gambar($nama,$username,$password,$nohp);
 						   $idpengguna = $this->db->insert_id();
 						   $this->m_pengguna->simpan_stand($nama,$idpengguna);
 	                    echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil ditambahkan ke database.</div>');
-	               		redirect('admin/pengguna');
+						  } 
+						  redirect('admin/pengguna');
+						   
 	               	}
 	            } 
 
@@ -142,6 +153,7 @@ class Pengguna extends CI_Controller{
 	function hapus_pengguna(){
 		$kode=$this->input->post('kode');
 		$nama=$this->input->post('nama');
+		$this->m_pengguna->hapus_stand($kode);
 		$this->m_pengguna->hapus_pengguna($kode);
 	    echo $this->session->set_flashdata('msg','<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">&times;</button>Pengguna <b>'.$nama.'</b> Berhasil dihapus dari database.</div>');
 	    redirect('admin/pengguna');
