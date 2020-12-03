@@ -19,9 +19,16 @@ class Dashboard extends CI_Controller{
 		$x['odr']=$this->m_order->get_all_order();
 		$x['statistik']=$this->m_order->get_grafik_penjualan();
 		$x['statistikplg']=$this->m_pelanggan->get_grafik_pelanggan();
-		$x['pen_now']=$this->m_order->get_total_penjualan_sekarang_by_stand($standid->stand_id);
-		$x['pen_last']=$this->m_order->get_total_penjualan_bulan_lalu_by_stand($standid->stand_id);
-		$x['tot_porsi']=$this->m_order->get_total_porsi_terjual_bulan_ini_by_stand($standid->stand_id);
+		
+		if($this->session->userdata('akses')=='2') {
+			$x['pen_now']=$this->m_order->get_total_penjualan_sekarang_by_stand($standid->stand_id);
+			$x['pen_last']=$this->m_order->get_total_penjualan_bulan_lalu_by_stand($standid->stand_id);
+			$x['tot_porsi']=$this->m_order->get_total_porsi_terjual_bulan_ini_by_stand($standid->stand_id);
+		} else {
+			$x['pen_now']=$this->m_order->get_total_penjualan_sekarang();
+			$x['pen_last']=$this->m_order->get_total_penjualan_bulan_lalu();
+			$x['tot_porsi']=$this->m_order->get_total_porsi_terjual_bulan_ini();
+		}
 		$x['tot_plg']=$this->m_order->get_tatal_pelanggan();
 		$this->load->view('admin/v_dashboard',$x);
 	}
