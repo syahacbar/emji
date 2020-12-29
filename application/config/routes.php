@@ -38,8 +38,10 @@
 |
 */
 
-$route['default_controller'] = "home";
+//$route['default_controller'] = "home";
+$route['default_controller'] = "suspend";
 $route['404_override'] = '';
+$route['(:any)'] = "suspend";
 
 
 /* End of file routes.php */
