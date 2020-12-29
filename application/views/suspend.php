@@ -16,7 +16,6 @@
     <div class="planet"><img src="http://orig02.deviantart.net/69ab/f/2013/106/0/4/sad_man_by_agiq-d61wk0d.png" height="200px"> </div>
   </div>
 </div>
-<div class="txt3">For more information please </div>
-<a href="https://wa.me/6282399661747"><div class="button">Contact with us</div></a>
+<div class="txt3">For more information please contact administrator.</div>
 </body>
 </html>
