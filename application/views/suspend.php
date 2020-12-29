@@ -1,5 +1,6 @@
 <html>
 <head>
+    <title>Account Suspended !!!</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/suspend.css">  
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
