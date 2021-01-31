@@ -252,6 +252,16 @@
 											<input type="file" name="filefoto" class="form-control" id="regular13">
 										</div>
 									</div>
+									<div class="form-group">
+										<label for="regular13" class="col-sm-3 control-label">Status</label>
+										<div class="col-sm-8">
+										<select id="select13" name="status" class="form-control" required>
+												<option value="1">Aktif</option>
+												<option value="0">Tidak Aktif</option>
+												
+											</select>
+										</div>
+									</div>
 									
 									
 			        </div>

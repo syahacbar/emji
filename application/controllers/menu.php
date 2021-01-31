@@ -10,7 +10,7 @@ class Menu extends CI_Controller{
 	}
  
 
-	function index(){
+	function index(){ 
 		$x['judul']="HOT PROMO";
 		$x['get_all_menu']=$this->m_menu->get_all_menu();
 		$x['get_all_menu_by_stand']=$this->m_menu->get_all_menu_by_stand();
