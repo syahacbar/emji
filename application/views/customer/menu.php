@@ -10,7 +10,7 @@
 					<h1>MENU</h1>
 				</div>
 			</div>
-		</div>
+		</div> 
 	</div>
 	<!-- End All Pages -->
 

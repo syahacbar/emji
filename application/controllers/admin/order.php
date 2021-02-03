@@ -15,7 +15,8 @@ class Order extends CI_Controller{
 		$kode=$this->session->userdata('idadmin'); 
 		$x['user']=$this->m_pengguna->get_pengguna_login($kode);
 		$x['data']=$this->m_order->get_all_order();
-		$x['stts']=$this->m_status->get_all_status();
+		$x['stts1']=$this->m_status->get_all_status_stand(); 
+		$x['stts2']=$this->m_status->get_all_status_kasir(); 
 		if($this->session->userdata('akses')=="1")
 		{
 			$this->load->view('admin/v_order',$x);

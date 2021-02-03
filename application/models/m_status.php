@@ -1,10 +1,16 @@
 <?php
 class M_status extends CI_Model{
 
-	function get_all_status(){
-		$hsl=$this->db->query("select * from tbl_status");
+	function get_all_status_stand(){
+		$hsl=$this->db->query("select * from tbl_status WHERE status_id <=2");
 		return $hsl;
 	}
+
+	function get_all_status_kasir(){
+		$hsl=$this->db->query("select * from tbl_status WHERE status_id > 2");
+		return $hsl;
+	}
+
 	function simpan_status($status){
 		$hsl=$this->db->query("insert into tbl_status (status_nama) values ('$status')");
 		return $hsl;

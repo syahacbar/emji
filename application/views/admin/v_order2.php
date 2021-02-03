@@ -243,7 +243,7 @@
 										<input type="hidden" name="kode" value="<?php echo $id;?>">
 										<div class="col-sm-8">
 											<select name="status" class="form-control" id="regular13" required>
-												<?php foreach ($stts->result_array() as $st) {
+												<?php foreach ($stts1->result_array() as $st) {
 													$st_id=$st['status_id'];
 													$st_nm=$st['status_nama'];
 												?>

@@ -224,13 +224,13 @@
 			        <h3 class="modal-title" id="myModalLabel">Update Status Order</h3>
 			    </div>
 			    <form class="form-horizontal" role="form" method="post" action="<?php echo base_url().'admin/order/update_order'?>" enctype="multipart/form-data">
-			        <div class="modal-body">
+			        <div class="modal-body"> 
 									<div class="form-group">
 										<label for="regular13" class="col-sm-3 control-label">Pilih</label>
 										<input type="hidden" name="kode" value="<?php echo $id;?>">
 										<div class="col-sm-8">
 											<select name="status" class="form-control" id="regular13" required>
-												<?php foreach ($stts->result_array() as $st) {
+												<?php foreach ($stts2->result_array() as $st) {
 													$st_id=$st['status_id'];
 													$st_nm=$st['status_nama'];
 												?>
